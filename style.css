@@ -69,10 +69,6 @@ header {
     color: var(--primary-color);
 }
 
-.logo span {
-    color: var(--accent-color);
-}
-
 .nav-links {
     display: none;
 }
@@ -198,6 +194,7 @@ header {
     height: auto;
     border-radius: 25px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    background-color: var(--light-bg);
 }
 
 @media (min-width: 768px) {
@@ -331,6 +328,7 @@ header {
 }
 
 /* Featured Vehicles */
+/*
 .featured-vehicles {
     background-color: var(--light-bg);
     padding: 80px 0;
@@ -407,6 +405,7 @@ header {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+*/
 
 /* Testimonials */
 .testimonials {
