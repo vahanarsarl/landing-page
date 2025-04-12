@@ -120,32 +120,7 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Users Say</h2>
-            <div class="testimonial-slider">
-                <div class="testimonials-container">
-                    <div class="testimonial">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Vahanar made our Moroccan road trip so easy! We rented a 4x4 for our desert adventure and everything went smoothly from booking to return."</p>
-                        <div class="testimonial-author">Sarah & John</div>
-                        <div class="testimonial-location">Tourists from UK</div>
-                    </div>
-                </div>
-                <div class="testimonial-controls">
-                    <div class="testimonial-dot active"></div>
-                    <div class="testimonial-dot"></div>
-                    <div class="testimonial-dot"></div>
-                </div>
-            </div>
-        </div>
+    
         
     </section>
 
@@ -446,125 +421,7 @@
             }
         });
         
-        // Add animations on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add animation classes
-            const animatableElements = document.querySelectorAll('.benefit-card, .step, .vehicle-card, .testimonial');
-            
-            // Create IntersectionObserver
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.2
-            });
-            
-            // Observe each element
-            animatableElements.forEach(element => {
-                observer.observe(element);
-            });
-            
-            // Add CSS for animations
-            const animationStyles = document.createElement('style');
-            animationStyles.textContent = `
-                .benefit-card, .step, .vehicle-card, .testimonial {
-                    opacity: 0;
-                    transform: translateY(30px);
-                    transition: opacity 0.5s ease, transform 0.5s ease;
-                }
-                
-                .benefit-card.animate, .step.animate, .vehicle-card.animate, .testimonial.animate {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-                
-                .benefit-card:nth-child(2) {
-                    transition-delay: 0.2s;
-                }
-                
-                .benefit-card:nth-child(3) {
-                    transition-delay: 0.4s;
-                }
-                
-                .step:nth-child(2) {
-                    transition-delay: 0.15s;
-                }
-                
-                .step:nth-child(3) {
-                    transition-delay: 0.3s;
-                }
-                
-                .step:nth-child(4) {
-                    transition-delay: 0.45s;
-                }
-                
-                .vehicle-card:nth-child(2) {
-                    transition-delay: 0.15s;
-                }
-                
-                .vehicle-card:nth-child(3) {
-                    transition-delay: 0.3s;
-                }
-                
-                .vehicle-card:nth-child(4) {
-                    transition-delay: 0.45s;
-                }
-            `;
-            document.head.appendChild(animationStyles);
-        });
         
-        // Simple testimonial slider functionality
-        let currentTestimonialIndex = 0;
-        const testimonials = [
-            {
-                rating: 5,
-                text: "Vahanar made our Moroccan road trip so easy! We rented a 4x4 for our desert adventure and everything went smoothly from booking to return.",
-                author: "Sarah & John",
-                location: "Tourists from UK"
-            },
-            {
-                rating: 5,
-                text: "As a local, I use Vahanar whenever I need a car for weekend trips. The prices are fair and the app is much faster than traditional rental agencies.",
-                author: "Mohammed",
-                location: "Casablanca resident"
-            },
-            {
-                rating: 4,
-                text: "Great selection of vehicles for every type of trip. I rented a scooter for exploring Marrakech and it was the perfect choice!",
-                author: "Elena",
-                location: "Tourist from Spain"
-            }
-        ];
-        
-        function renderTestimonial(index) {
-            const testimonialContainer = document.querySelector('.testimonial');
-            const testimonial = testimonials[index];
-            
-            // Create stars based on rating
-            let stars = '';
-            for (let i = 0; i < testimonial.rating; i++) {
-                stars += '<i class="fas fa-star"></i>';
-            }
-            
-            testimonialContainer.innerHTML = `
-                <div class="testimonial-rating">
-                    ${stars}
-                </div>
-                <p class="testimonial-text">"${testimonial.text}"</p>
-                <div class="testimonial-author">${testimonial.author}</div>
-                <div class="testimonial-location">${testimonial.location}</div>
-            `;
-        }
-        
-        // Auto-rotate testimonials
-        setInterval(() => {
-            currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
-            renderTestimonial(currentTestimonialIndex);
-        }, 5000);
     </script>
 </body>
 </html>
